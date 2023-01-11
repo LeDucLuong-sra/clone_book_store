@@ -1,13 +1,15 @@
 <div class="mt-4">
     <div class="row">
-        {{#each courses}}
+        {{#each books}}
         <div class="col-sm-6 col-lg-4">
             <div class="card card-item">
-                <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}">
+                <a href="/book/{{this.slug}}">
+                    <img src="{{this.image}}" class="card-img-top" alt="{{this.name}}">
+                </a>
                 <div class="card-body">
                     <h5 class="card-title">{{this.name}}</h5>
-                    <p class="card-text">{{this.description}}</p>
-                    <a href="#" class="btn btn-primary">Mua khoa hoc</a>
+                    <p class="card-text">{{this.giaban}} đ</p>
+                    <a href="#" class="btn btn-primary">Mua Sách</a>
                 </div>
             </div>
         </div>

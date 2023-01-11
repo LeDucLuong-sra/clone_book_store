@@ -1,4 +1,5 @@
-const Course = require('../models/Course')
+const Book = require('../models/Book')
+const {mutipleMongooseToObject} = require('../../util/mongoose')
 class HomeController {
     // [Get => home]
    index(req, res, next) {       
@@ -13,14 +14,24 @@ class HomeController {
             
           });*/
           
+
+          /*
           Course.find({})
             .then(courses => {
-                courses =courses.map(course => course.toObject())
+                courses =courses.map(course => course.toObject());
                 res.render('home',{  courses: courses});
             })
             .catch(next);
     //    res.render('home');
+    */
+    Book.find({})
+    .then(books => {
+        
+        res.render('home',{  books: mutipleMongooseToObject(books)});
+    })
+    .catch(next);
     }
+    
     
 }
 module.exports = new HomeController;
